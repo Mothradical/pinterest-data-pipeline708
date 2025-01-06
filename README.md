@@ -22,9 +22,9 @@ Over the course of this project, I learned to see the big picture of how all the
   - [AWS MWAA](#aws-mwaa)
   - [AWS Kinesis](#aws-kinesis)
 
-## Installation and Instructions
+## Installation
 
-### Installation
+### Dependencies
 
 The following dependencies are needed to run this project:
 
@@ -34,7 +34,7 @@ The following dependencies are needed to run this project:
 
 As this project was run using confidential details for access to the database, AWS, and Databricks, it cannot be run in its current form by others. It can, however, be adapted to work for a different project.
 
-### Tools and Dependencies
+### Tools
 
 - Apache Kafka - An event streaming platform
 
