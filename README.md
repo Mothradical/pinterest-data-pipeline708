@@ -8,7 +8,7 @@ Over the course of this project, I learned to see the big picture of how all the
 
 ## Table of Contents
 
-- [Installations](#installations)
+- [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Tools](#tools)
 - [File Structure of Project](#file-structure-of-project)
