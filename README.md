@@ -4,7 +4,7 @@
 
 The aim of this project was to design a data pipeline for batch and streaming data, utilising Apache Kafka, Amazon Web Services' cloud technology and Databricks.
 
-Over the course of this project, I learned to see the big picture of how all these services are integrated. Through lessons I learned all this, but only as a fact. I didn't truly appreciate the intricacy until actually executing it myself.
+Over the course of this project, I learned to see the big picture of how all these services are integrated. Though I knew plenty about these services as a fact, I didn't truly appreciate the intricacy until actually executing a project with them myself.
 
 ## Table of Contents
 
