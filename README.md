@@ -36,7 +36,7 @@ As this project was run using confidential details for access to the database, A
 
 ### Tools
 
-- Apache Kafka - An event streaming platform
+- Apache Kafka - An event streaming platform.
 
 - Apache Spark - A multi-language engine for performing data processes on clusters, utilised in this project as a feature of Databricks.
 
