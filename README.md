@@ -52,7 +52,7 @@ As this project was run using confidential details for access to the database, A
 
 - Kafka REST Proxy - Provides a RESTful interface to an Kafka cluster, allowing for administrative tasks to be performed on the cluster without the use of native Kafka protocol or clients.
 
-- Managed Workflows for Apache Airflow (MWAA) - Apache Airflow allows 
+- Managed Workflows for Apache Airflow (MWAA) - Apache Airflow allows users to use Python to build scheduling workflows for batch data processes. In this project, it is used to execute a Databricks notebook on daily intervals.
 
 ## File Structure of Project
 
@@ -60,7 +60,7 @@ user_posting_emulation.py: This Python file emulates the processing of data to a
 
 user_posting_emulation_streaming.py: This Python file emulates the processing of data to a Kinesis Data Stream by pulling random records from an online database and separating them with a PartitionKey. Database credentials are stored in a separate yaml file.
 
-load_s3_to_databricks.py: This python file contains code used in Databricks to read from an AWS S3 bucket, then clean and query that data.
+load_s3_to_databricks.py: This Python file contains code used in Databricks to read from an AWS S3 bucket, then clean and query that data.
 
 load_kinesis_to_databricks.py: This file is used to read streaming data from AWS Kinesis, then transform and clean that data before uploading it to Delta tables.
 
