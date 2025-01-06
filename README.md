@@ -8,9 +8,9 @@ Over the course of this project, I learned to see the big picture of how all the
 
 ## Table of Contents
 
-- [Installation and Instructions](#installation-and-instructions)
-  - [Installation](#installation)
-  - [Tools and Dependencies](#tools-and-dependencies)
+- [Installations](#installations)
+  - [Dependencies](#dependencies)
+  - [Tools](#tools)
 - [File Structure of Project](#file-structure-of-project)
 - [Building the Pipeline](#building-the-pipeline)
   - [Set up the project environment](#set-up-the-project-environment)
