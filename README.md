@@ -1,5 +1,7 @@
 # Pinterest Data Pipeline
 
+![screenshot](diagram.png)
+
 ## Aim of Project
 
 The aim of this project was to design a data pipeline for batch and streaming data, utilising Apache Kafka, Amazon Web Services' cloud technology and Databricks.
