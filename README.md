@@ -62,11 +62,11 @@ user_posting_emulation.py: This Python file emulates the processing of data to a
 
 user_posting_emulation_streaming.py: This Python file emulates the processing of data to a Kinesis Data Stream by pulling random records from an online database and separating them with a PartitionKey. Database credentials are stored in a separate yaml file.
 
-load_s3_to_databricks.py: This Python file contains code used in Databricks to read from an AWS S3 bucket, then clean and query that data.
+Load S3 Bucket to Databricks and Clean.ipynb: This Notebook file contains code used in Databricks to read from an AWS S3 bucket, then clean and query that data.
 
-load_kinesis_to_databricks.py: This file is used to read streaming data from AWS Kinesis, then transform and clean that data before uploading it to Delta tables.
+Load Kinesis into Databricks and Clean.ipynb: This Notebook file is used to read streaming data from AWS Kinesis, then transform and clean that data before uploading it to Delta tables.
 
-1254dc635ec5_dag.py: This Python file contains a DAG to be uploaded to a bucket in an AWS MWAA environment. This DAG is set to trigger a Databricks notebook based on load_s3_to_databricks.py daily, thus emulating batch processing.
+1254dc635ec5_dag.py: This Python file contains a DAG to be uploaded to a bucket in an AWS MWAA environment. This DAG is set to trigger a Databricks notebook Load S3 Bucket to Databricks.ipynb daily, thus emulating batch processing.
 
 README.md: This is the file you're reading right now, containing information about the project.
 
@@ -117,7 +117,7 @@ As long as you have an AWS IAM user with the appropriate permissions, you should
 
 - Set up a Databricks account
 - My account was set-up to have the neccessary permissions to read from S3 directly without mounting the bucket. You may need to mount the bucket, for which you'll also need certain permissions.
-- The file load_s3_to_databricks.py contains the code I wrote to read my S3 bucket into Databricks, creating three different dataframes (one for each topic), cleaning them, and running a series of queries. Each separate notebook command is indicated by '# COMMAND'.
+- The file Load S3 Bucket to Databricks and Clean.ipynb contains the code I wrote to read my S3 bucket into Databricks, creating three different dataframes (one for each topic), cleaning them, and running a series of queries.
 - You will have to adjust to code to your specifications, such as replacing part of the path to the S3 topics with your IAM userID.
 
 ### AWS MWAA
@@ -136,6 +136,6 @@ As long as you have an AWS IAM user with the appropriate permissions, you should
 - Return to the API you created earlier and allow it to invoke Kinesis actions. You may need to create an IAM role for API access to Kinesis, though I was already provided with one. Cope its arn.
 - You will need to create a new resource called "streams"  with a get method.then a resource under that called "{stream-name}" with DELETE, GET, and POST methods, then two resources under that called "record" and "records" each with a PUT method. Use the arn from the previous step for the Execution role when setting up these methods.
 - Run user_posting_emulation_streaming.py to send data to Kinesis streams. Make adjustments to the script to suit your needs.
-- Create a new notebook in Databricks based on the file load_kinesis_to_databricks. Once again, you will need your own permissions to access AWS.
+- In Databricks, run the file Load Kinesis into Databricks and Clean.ipynb. Once again, you will need your own permissions to access AWS.
 - Make sure that data are being uploaded to Kinesis Data Streams. Run the notebook and the data will be read into Databricks from Kinesis as a Sparks dataframe with encoded data, which is then split into different dataframes based on the partition key (topics). The encoded data are then converted to JSON, then converted into columns and records, cleaned, and finally uploaded to Delta tables which are stored in Databricks. These are now ready for querying using SQL.
 - As the Delta tables are appended with each new record received, if user_posting_emulation_streaming.py and the Databricks notebook were to run continuously, this would emulate streaming data processing.
